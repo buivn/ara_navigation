@@ -1,0 +1,51 @@
+<launch>
+  <arg name="convPose_state"      default="true"/>
+  <!-- <arg name="convPose_state"      default="false"/> -->
+  <!-- <arg name="move_1leg"           default="true"/> -->
+  <arg name="move_1leg"           default="false"/>
+  <arg name="move_2leg"           default="true"/>
+  <!-- <arg name="move_2leg"           default="false"/> -->
+  <arg name="worming_mode"        default="true"/>
+  <!-- <arg name="worming_mode"        default="false"/> -->
+  <arg name="mobile_mode"         default="false"/>
+  <!-- <arg name="mobile_mode"         default="true"/> -->
+
+  
+  <arg name="turning_mode"         default="true"/>
+  <arg name="convPose_2"          default="false"/>
+  <!-- <arg name="convPose_2"          default="false"/> -->
+  <!-- <arg name="turning"              default="true"/> -->
+  <arg name="turning"              default="false"/>
+  <arg name="joint5_turning"       default="true"/>
+  <arg name="angle"                default="4"/>
+
+  <arg name="mobile_config"        default="false"/>
+
+  <arg name="distance1"           default="65"/>
+  <arg name="distance2"           default="65"/>
+  <!-- <arg name="distance1"           default="60"/> -->
+  <!-- <arg name="distance2"           default="60"/> -->
+
+
+  <!-- <node name="$(arg namespace)" pkg="araControl" type="clt"> -->
+ <!--  <node name="Robot_Control1" pkg="araControl" type="clt">
+    <param name="convPose_state"  value="$(arg convPose_state)"/>
+    <param name="move_1leg"       value="$(arg move_1leg)"/>
+    <param name="move_2leg"       value="$(arg move_2leg)"/>
+    <param name="worming_mode"       value="$(arg worming_mode)"/>
+    <param name="mobile_mode"       value="$(arg mobile_mode)"/>
+  </node> -->
+
+  <node name="navigation" pkg="araControl" type="icra21">
+    <param name="convPose_2"      value="$(arg convPose_2)"/>
+    <param name="turning_mode"    value="$(arg turning_mode)"/>
+    <param name="turning"         value="$(arg turning)"/>
+    <param name="mobile_config"   value="$(arg mobile_config)"/>
+    <param name="joint5_turning"  value="$(arg joint5_turning)"/>
+  </node>
+
+<!--   <node name="Mag_Array" pkg="climb3" type="check_magarr">
+    <param name="distance1"       value="$(arg distance1)"/>
+    <param name="distance2"       value="$(arg distance2)"/>
+  </node> -->
+</launch>

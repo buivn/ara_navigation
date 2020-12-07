@@ -1,0 +1,4 @@
+bool cmd
+geometry_msgs/Vector3 twoDpose
+---
+bool done

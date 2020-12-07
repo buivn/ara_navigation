@@ -1,0 +1,9 @@
+#goal definition
+geometry_msgs/Vector3 inter_target
+---
+#result definition
+bool done
+geometry_msgs/Vector3 step_target
+---
+#feedback
+geometry_msgs/Vector3 current_pose
